@@ -316,6 +316,9 @@ command_Esc = (vim, event) ->
   # TabView is not supported in palemoon
   # vim.rootWindow.TabView.hide()
 
+command_bookmark_page = (vim) ->
+  vim.rootWindow.document.getElementById("Browser:AddBookmarkAs").doCommand()
+
 
 class Command
   constructor: (@group, @name, @func, keys) ->
@@ -392,6 +395,7 @@ commands = [
   new Command('misc',   'find_hl',               command_find_hl,               ['a,/'])
   new Command('misc',   'find_next',             command_find_next,             ['n'])
   new Command('misc',   'find_prev',             command_find_prev,             ['N'])
+  new Command('misc',   'bookmark_page',         command_bookmark_page,         ['b'])
   new Command('misc',   'insert_mode',           command_insert_mode,           ['i'])
   new Command('misc',   'help',                  command_help,                  ['?'])
   new Command('misc',   'dev',                   command_dev,                   [':'])
