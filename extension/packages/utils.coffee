@@ -124,6 +124,7 @@ simulated_events = new WeakMap()
 
 # Simulate mouse click with a full chain of events.  Copied from Vimium
 # codebase.
+# Modifiers ctrl, shift and meta can be used.
 simulateClick = (element, modifiers = {}) ->
   document = element.ownerDocument
   window = document.defaultView
@@ -133,8 +134,8 @@ simulateClick = (element, modifiers = {}) ->
     mouseEvent = document.createEvent('MouseEvents')
     mouseEvent.initMouseEvent(
       event, true, true, window, 1, 0, 0, 0, 0,
-      modifiers.ctrlKey, false, false, modifiers.metaKey,
-      0, null
+      modifiers.ctrlKey, false, modifiers.shiftKey, modifiers.metaKey,
+      modifiers.button ? 0, null
     )
     simulated_events.set(mouseEvent, true)
     # Debugging note: Firefox will not execute the element's default action if
