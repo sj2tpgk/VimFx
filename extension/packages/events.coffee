@@ -120,7 +120,7 @@ windowsListeners =
     target = event.originalTarget
     return unless vim = getVimFromEvent(event)
 
-    findBar = vim.rootWindow.gBrowser.getFindBar()
+    findBar = vim.rootWindow.gFindBar
     if target == findBar._findField.mInputField
       vim.enterMode('find')
       return
@@ -160,7 +160,7 @@ windowsListeners =
     target = event.originalTarget
     return unless vim = getVimFromEvent(event)
 
-    findBar = vim.rootWindow.gBrowser.getFindBar()
+    findBar = vim.rootWindow.gFindBar
     if target == findBar._findField.mInputField
       vim.enterMode('normal')
       return

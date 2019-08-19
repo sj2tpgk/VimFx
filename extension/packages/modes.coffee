@@ -22,7 +22,8 @@ modes['normal'] =
 
   onInput: (vim, storage, keyStr, event) ->
     isEditable = utils.isElementEditable(event.originalTarget)
-    autoInsertMode = isEditable or vim.rootWindow.TabView.isVisible()
+    # TabView is not supported in palemoon
+    autoInsertMode = isEditable
 
     if autoInsertMode and not isEscCommandKey(keyStr)
       return false
@@ -77,11 +78,11 @@ modes['find'] =
   onEnter: ->
 
   onLeave: (vim) ->
-    findBar = vim.rootWindow.gBrowser.getFindBar()
+    findBar = vim.rootWindow.gFindBar
     findStorage.lastSearchString = findBar._findField.value
 
   onInput: (vim, storage, keyStr) ->
-    findBar = vim.rootWindow.gBrowser.getFindBar()
+    findBar = vim.rootWindow.gFindBar
     if isEscCommandKey(keyStr) or keyStr == 'Return'
       findBar.close()
       return true

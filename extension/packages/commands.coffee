@@ -260,7 +260,7 @@ command_forward = (vim) ->
 findStorage = {lastSearchString: ''}
 
 helper_find = (highlight, vim) ->
-  findBar = vim.rootWindow.gBrowser.getFindBar()
+  findBar = vim.rootWindow.gFindBar
 
   findBar.onFindCommand()
   findBar._findField.focus()
@@ -277,7 +277,7 @@ command_find = helper_find.bind(undefined, false)
 command_find_hl = helper_find.bind(undefined, true)
 
 helper_find_again = (direction, vim) ->
-  findBar = vim.rootWindow.gBrowser.getFindBar()
+  findBar = vim.rootWindow.gFindBar
   if findStorage.lastSearchString.length > 0
     findBar._findField.value = findStorage.lastSearchString
     findBar.onFindAgainCommand(direction)
@@ -311,9 +311,10 @@ command_Esc = (vim, event) ->
 
   vim.rootWindow.DeveloperToolbar.hide()
 
-  vim.rootWindow.gBrowser.getFindBar().close()
+  vim.rootWindow.gFindBar.close()
 
-  vim.rootWindow.TabView.hide()
+  # TabView is not supported in palemoon
+  # vim.rootWindow.TabView.hide()
 
 
 class Command

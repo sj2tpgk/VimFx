@@ -4,14 +4,15 @@
      xmlns:em="http://www.mozilla.org/2004/em-rdf#">
 
   <Description about="urn:mozilla:install-manifest">
-    <em:id>VimFx@akhodakivskiy.github.com</em:id>
-    <em:homepageURL>http://www.github.com/akhodakivskiy/VimFx</em:homepageURL>
+    <em:id>VimFx@sj2tpgk.github.com</em:id>
+    <em:homepageURL>http://www.github.com/sj2tpgk/VimFx</em:homepageURL>
     <em:version>0.5.17</em:version>
     <em:bootstrap>true</em:bootstrap>
     <em:type>2</em:type>
 
     <em:name>VimFx</em:name>
-    <em:description>Vim keyboard shortcuts for Firefox</em:description>
+    <em:description>Vim keyboard shortcuts for Firefox
+Forked from VimFx version 0.5.17 for Pale Moon.</em:description>
     <em:creator>Anton Khodakivskiy</em:creator>
     <em:developer>Simon Lydell</em:developer>
 
@@ -19,7 +20,7 @@
     <em:targetApplication>
       <Description>
         <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
-        <em:minVersion>29.0</em:minVersion>
+        <em:minVersion>24.0</em:minVersion>
         <em:maxVersion>36.*</em:maxVersion>
       </Description>
     </em:targetApplication>
