@@ -1,0 +1,22 @@
+<!ENTITY pref.hint_chars.title      "Символы на маркерах">
+<!ENTITY pref.hint_chars.desc       "По умолчанию: fjdkslaghrueiwovncm">
+
+<!ENTITY pref.black_list.title      "Стоп список">
+<!ENTITY pref.black_list.desc       "Список адесов, разделенных запятой, на которых VimFx не активен.
+Разрешены одстановки: *, !. Пример: *example.com*,*foobar.org*">
+
+<!ENTITY pref.prev_patterns.title   "Шаблоны ссылок на следующую страницу">
+<!ENTITY pref.prev_patterns.desc    "Тексты ссылок на следующую страницу (разделенные запятой)">
+
+<!ENTITY pref.next_patterns.title   "Шаблоны ссылок на предыдущую страницу">
+<!ENTITY pref.next_patterns.desc    "Тексты ссылок на предыдущую страницу (разделенные запятой)">
+
+<!ENTITY pref.scroll_step_lines.title   "Шаг прокрутки страницы">
+
+<!ENTITY pref.hints_bloom_on.title "Умное распределение маркеров">
+<!ENTITY pref.hints_bloom_on.desc  "Назначать короткие маркеры ссылкам и элементам, которые часто используются">
+
+<!ENTITY pref.prevent_autofocus.title "Не фокусировать поля ввода автоматически">
+
+<!ENTITY customizeButton.title "Команды">
+<!ENTITY customizeButton.label "Настроить">

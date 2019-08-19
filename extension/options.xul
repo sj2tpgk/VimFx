@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE mydialog SYSTEM "chrome://vimfx/locale/options.dtd">
+
+<vbox xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+    <setting pref="extensions.VimFx.hint_chars" type="string"
+        title="&pref.hint_chars.title;" desc="&pref.hint_chars.desc;" />
+    <setting pref="extensions.VimFx.black_list" type="string"
+        title="&pref.black_list.title;" desc="&pref.black_list.desc;" />
+    <setting pref="extensions.VimFx.prev_patterns" type="string"
+        title="&pref.prev_patterns.title;" desc="&pref.prev_patterns.desc;" />
+    <setting pref="extensions.VimFx.next_patterns" type="string"
+        title="&pref.next_patterns.title;" desc="&pref.next_patterns.desc;" />
+    <setting pref="extensions.VimFx.scroll_step_lines" type="integer"
+        title="&pref.scroll_step_lines.title;" />
+    <setting pref="extensions.VimFx.hints_bloom_on" type="bool"
+        title="&pref.hints_bloom_on.title;" desc="&pref.hints_bloom_on.desc;" />
+    <setting pref="extensions.VimFx.prevent_autofocus" type="bool"
+        title="&pref.prevent_autofocus.title;" />
+    <setting title="&customizeButton.title;" type="control">
+        <button id="customizeButton" label="&customizeButton.label;" />
+    </setting>
+</vbox>

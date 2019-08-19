@@ -1,0 +1,21 @@
+<!ENTITY pref.hint_chars.title      "Zeichen für Hinweise">
+<!ENTITY pref.hint_chars.desc       "Voreinstellung: fjdkslaghrueiwovncm">
+
+<!ENTITY pref.black_list.title      "Schwarze Liste">
+<!ENTITY pref.black_list.desc       "Durch Komma getrennte Liste von URLs für die VimFx automatisch deaktiviert werden soll. Erlaubte Wildcard-Zeichen: *, !. Beispiel: *example.com*,*foobar.org*">
+
+<!ENTITY pref.prev_patterns.title   "Muster für die vorherige Seite">
+<!ENTITY pref.prev_patterns.desc    "Muster für Links, die auf die vorherige Seite verweisen; getrennt durch Kommas">
+
+<!ENTITY pref.next_patterns.title   "Muster für die nächste Seite">
+<!ENTITY pref.next_patterns.desc    "Muster für Links, die auf die nächste Seite verweisen; getrennt durch Kommas">
+
+<!ENTITY pref.scroll_step_lines.title     "Scroll-Schrittweite">
+
+<!ENTITY pref.hints_bloom_on.title "Intelligente Hinweiszuweisung">
+<!ENTITY pref.hints_bloom_on.desc  "Oft besuchten Links kürzere Hinweise zuweisen">
+
+<!ENTITY pref.prevent_autofocus.title "Eingabefelder nicht automatische fokussieren">
+
+<!ENTITY customizeButton.title "Tastaturbefehle">
+<!ENTITY customizeButton.label "Anpassen">

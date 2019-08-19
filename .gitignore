@@ -1,5 +1,7 @@
-/node_modules
-/build
-/gulpfile.js
-/help.html
-/hints.html
+mozmill-tests
+*Thumbs.db
+developer
+node_modules
+*.js
+.DS_Store
+VimFx.xpi

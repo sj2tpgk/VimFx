@@ -1,106 +1,113 @@
-# VimFx – Vim keyboard shortcuts for Firefox
+# VimFx - Vim keyboard shortcuts for Firefox
 
-**Note:** VimFx is a _legacy_ Firefox extension, which is **not**  [compatible
-with Firefox 57+][firefox-57+]. (And never will be.)
+![VimFx Logo](https://raw.github.com/akhodakivskiy/VimFx/develop/icon-large.png)
 
-If you’re looking for a replacement for VimFx, check out these extensions:
+**Extension AMO page**: https://addons.mozilla.org/en-US/firefox/addon/vimfx.
 
-- [Vimium-FF]
-- [Saka Key]
-- [Vim Vixen]
-- [Tridactyl]
+**Mailing list**: [vimfx@librelist.com](mailto:vimfx@librelist.com?subject=Subscribe) (just send an email to subscribe)
 
-You might also want to check out how to [patch Firefox to work with VimFx] and
-its accompanying [blog post].
+Contribute your localization! See `locale` folder.
 
-(VimFx won’t be transformed into a WebExtension, because it is a big task that
-nobody has felt like tackling and not all necessary APIs are available. However,
-the source code is free, so if you feel like giving it a shot you can totally do
-so!)
+Read [CONTRIBUTING.md](CONTRIBUTING.md) before opening issues and pull requests.
 
-[firefox-57+]: https://support.mozilla.org/en-US/kb/firefox-add-technology-modernizing
-[Vimium-FF]: https://addons.mozilla.org/firefox/addon/vimium-ff/
-[Saka Key]: https://addons.mozilla.org/firefox/addon/saka-key/
-[Vim Vixen]: https://addons.mozilla.org/firefox/addon/vim-vixen/
-[Tridactyl]: https://addons.mozilla.org/firefox/addon/tridactyl-vim/
-[patch Firefox to work with VimFx]: https://github.com/girst/LegacyFox
-[blog post]: https://gir.st/blog/legacyfox.htm
+## Overview
 
----
+[VimFx](https://addons.mozilla.org/en-US/firefox/addon/vimfx/)
+is a [Mozilla Firefox](https://www.mozilla.org/en-US/firefox/fx/#desktop)
+extension which introduces Vim-style keyboard shortcuts for browsing and navigation,
+significantly reducing the use of mouse, and allowing your hands to rest on the home row.
 
-<img src="extension/skin/icon128.png" alt="" align="right">
-
-VimFx is a Firefox extension which adds short, Vim-style keyboard shortcuts
-for browsing and navigation, for a near mouseless experience.
-
-- Doesn’t change your browser in any way. Everything can be disabled.
-- Easy for beginners, powerful for advanced users. Not just for Vim fanatics.
-- Modeled after [Vimium] for Chrome.
-
-**New to VimFx?** Check out [Questions & Answers]!  
-Power user? Make a [config file]!  
-In either case, have look at the the [documentation] and the [wiki].  
-
-VimFx is made by [these awesome people][people].
-
-[Vimium]: http://vimium.github.io/
-[Vimperator]: http://www.vimperator.org/vimperator
-[config file]: https://github.com/akhodakivskiy/VimFx/blob/master/documentation/config-file.md
-[documentation]: https://github.com/akhodakivskiy/VimFx/tree/master/documentation#contents
-[wiki]: https://github.com/akhodakivskiy/VimFx/wiki
-[Questions & Answers]: https://github.com/akhodakivskiy/VimFx/tree/master/documentation/questions-and-answers.md
-[people]: https://github.com/akhodakivskiy/VimFx/blob/master/PEOPLE.md
+VimFx was inspired by [Vimperator](http://www.vimperator.org/)
+and designed after [Vimium](http://vimium.github.com/) for
+[Google Chrome](https://www.google.com/intl/en/chrome/browser/) preserving the shortcuts and behavior.
+If you are used to Vimium then it will be easy to get started with VimFx.
 
 ## Why VimFx was created
 
-> Even before [Vimium] there was [Vimperator] for Firefox. In my opinion,
-> Vimperator has too many features and aggressively changes the default Firefox
-> appearance and behavior. Vimium is exactly what I need in terms of added
-> functionality, but for Chrome. That’s why I decided to develop a similar
-> extension for Firefox.
->
-> &nbsp;**VimFx will be nice to your browser and to your habits. Promise.**
->
-> – _Anton Khodakivskiy,_ VimFx’s original author.
+Even before Vimium there was Vimperator for Firefox.  In my opinion the problem
+with Vimperator is that it has too many features and aggressively changes
+the default Firefox appearance and behavior. Vimium was developed for Google Chrome
+and it was exactly what I needed in terms of added functionality. That's why I decided
+to develop similar extension for Firefox.
+
+VimFx will be nice to your browser and to your habits. Promise.
 
 ## Key Features
 
-VimFx has concise shortcuts for most commonly performed actions. Many simply
-invoke standard Firefox features. That is preferred over re-implementing similar
-functionality.
+- Concise shortcuts for most commonly performed actions
+- Follow and access controls on the page using hint markers
+- Easy access to the keyboard shortcuts dialog, which describes and lets you customize all available shortcuts (press ?)
 
-Press <kbd>f</kbd> to mark links, text inputs and buttons on the page. Then
-either type the [_hint_ or the _text_][hint-chars] of a marked element to click
-it. This command has many variations, for example to copy links or open them in
-new tabs.
+## Shortcuts
 
-Search with <kbd>/</kbd> and cycle between matches with <kbd>n</kbd> and
-<kbd>N</kbd>.
+This is a text representation of the keyboard shortcuts dialog within the extension. Might not be up to date.
+Press ? or use the toolbar button to open the dialog, which helps you remember the shortcuts, and lets you customize them.
 
-Open a new tab with <kbd>t</kbd>, close it with <kbd>x</kbd>. Reopen it again
-with <kbd>X</kbd>. Switch between tabs with <kbd>J</kbd> and <kbd>K</kbd>, or
-some of the several other tab commands.
+Global shortcut to enable/disable VimFx: `shift-alt-v`
 
-Scrolling left/down/up/right: <kbd>h</kbd>, <kbd>j</kbd>, <kbd>k</kbd>, <kbd>l</kbd>.  
-Top/Bottom: <kbd>gg</kbd>, <kbd>G</kbd>.  
-Page up/down: <kbd>space</kbd>, <kbd>shift-space</kbd>.  
-Half a page: <kbd>d</kbd>, <kbd>u</kbd>.
+### Dealing with URLs
 
-Use [Caret mode] to copy text without using the mouse.
+    o       Focus the Address Bar
+    O       Focus the Search Bar
+    p       Navigate to the address in the clipboard
+    P       Open new tab and navigate to the address in the clipboard
+    yf      Copy link url to the clipboard
+    vf      Focus element
+    yy      Copy current page link to the clipboard
+    r       Reload current page
+    R       Reload current page and all the assets (js, css, etc.)
+    ar      Reload pages in all tabs
+    aR      Reload pages in all tabs including assets (js, css, img)
+    s       Stop loading current page
+    as      Stop loading pages in all tabs
 
-There are of course many more shortcuts! Press <kbd>?</kbd> to see them all, and
-then <kbd>/</kbd> to search among them. Click on a command or open VimFx’s
-[options] page in the Add-ons Manager to customize the [default shortcuts].
+### Navigating the Page
 
-You can temporarily disable VimFx by using Ignore mode. Press <kbd>i</kbd> to
-enter it, and <kbd>shift-escape</kbd> to exit. Use the [blacklist] to
-automatically enter Ignore mode on specific sites.
+    gg      Scroll to the Top of the page
+    G       Scroll to the Bottom of the page
+    j,c-e   Scroll Down
+    k,c-y   Scroll Up
+    h       Scroll Left
+    l       Scroll Right
+    d       Scroll half a Page Down
+    u       Scroll half a Page Up
+    c-f     Scroll full Page Down
+    c-b     Scroll full Page Up
 
-There’s also an [article on ghacks.net][ghacks] which is a good introduction.
+### Working with Tabs
 
-[hint-chars]: https://github.com/akhodakivskiy/VimFx/blob/master/documentation/options.md#hint-characters
-[Caret mode]: https://github.com/akhodakivskiy/VimFx/blob/master/documentation/commands.md#the-v-commands--caret-mode
-[options]: https://github.com/akhodakivskiy/VimFx/blob/master/documentation/options.md
-[default shortcuts]: https://github.com/akhodakivskiy/VimFx/blob/master/extension/lib/defaults.coffee
-[blacklist]: https://github.com/akhodakivskiy/VimFx/blob/master/documentation/options.md#blacklist
-[ghacks]: http://www.ghacks.net/2016/07/01/vimfx-improve-firefox-keyboard-use/
+    t       Open New Blank tab
+    J,gT    Go to the Previous tab
+    K,gt    Go to the Next tab
+    c-J     Move current tab to the Left
+    c-K     Move current tab to the Right
+    gh      Navigate to the Home Page
+    gH,g^   Go to the First tab
+    gL,g$   Go to the Last tab
+    x       Close current tab
+    X       Restore last closed tab
+
+### Browsing
+
+    f       Follow a link on the current page
+    F       Follow a link on the current page in a new tab
+    af      Follow multiple links on the current page
+    [       Follow the Previous page link on the current page
+    ]       Follow the Next page link on the current page
+    gu      Go up one level in the URL hierarchy
+    gU      Go up to root of the URL hierarchy
+    H       Go Back in history
+    L       Go Forward in history
+
+### Misc
+
+    /       Enter Find mode
+    a/      Enter Find mode to highlight all matches
+    n       Go to the next Find match
+    N       Go to the previous Find match
+    i       Enter insert mode: Ignore all commands
+    ?       Show this dialog
+    :       Open Developer Toolbar
+    Esc     Enter normal mode (remove hint markers, exit insert mode) or blur/close active element
+
+Can't see a link hint, because it's overlapped by another? Try pressing space or shift-space!
