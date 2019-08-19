@@ -139,6 +139,19 @@ command_scroll_page_up = (vim) ->
 command_open_tab = (vim) ->
   vim.rootWindow.BrowserOpenTab()
 
+# Duplicate current tab
+command_duplicate_tab = (vim) ->
+  helper_getPostDataByURL = (url) ->
+    postData = null
+    if (!(utils.isURL(url))) && (submission = utils.browserSearchSubmission(url))
+      postData = submission.postData
+      return postData
+
+  url = vim.window.location.href
+  postData = helper_getPostDataByURL(url)
+  result = vim.rootWindow.gBrowser.addTab(url, null, null, postData, null, false)
+  vim.rootWindow.gBrowser.selectedTab = result
+
 # Switch to the previous tab.
 command_tab_prev = (vim) ->
   wrap = true
@@ -371,6 +384,7 @@ commands = [
   new Command('nav',    'scroll_page_up',        command_scroll_page_up,        ['c-b'])
 
   new Command('tabs',   'open_tab',              command_open_tab,              ['t'])
+  new Command('tabs',   'duplicate_tab',         command_duplicate_tab,         ['T'])
   new Command('tabs',   'tab_prev',              command_tab_prev,              ['J', 'g,T'])
   new Command('tabs',   'tab_next',              command_tab_next,              ['K', 'g,t'])
   new Command('tabs',   'tab_move_left',         command_tab_move_left,         ['c-J'])
